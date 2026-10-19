@@ -1,0 +1,205 @@
+/* Smooth Scroll saat klik Navbar */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Color Palette: Dark Obsidian + Crimson Maroon Accent */
+:root {
+    --bg-body: #0d0d0e;         /* Hitam pekat */
+    --bg-card: #161618;         /* Abu hitam (Surface card) */
+    --bg-card-hover: #1e1e21;   
+    --maroon-primary: #b01c2e;  /* Maroon terang biar kontras */
+    --maroon-soft: rgba(176, 28, 46, 0.18);
+    --text-main: #f4f4f5;       /* Putih terang */
+    --text-muted: #a1a1aa;      /* Abu-abu terang */
+    --border-card: rgba(255, 255, 255, 0.08);
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-body) !important;
+    color: var(--text-main) !important;
+    line-height: 1.6;
+}
+
+/* Utilities */
+.extra-small { font-size: 0.8rem; }
+.tracking-tight { letter-spacing: -0.03em; }
+.tracking-wide { letter-spacing: 0.05em; }
+.max-w-prose { max-width: 60ch; }
+.text-maroon { color: var(--maroon-primary) !important; }
+.cursor-pointer { cursor: pointer; }
+
+/* Transisi Halus */
+.bento-card, .nav-link, .btn, .skill-chip, .cert-wrapper, .avatar-img {
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Navbar Solid Hitam */
+.custom-navbar {
+    background-color: #121214 !important;
+    border: 1px solid var(--border-card) !important;
+}
+
+.custom-navbar .nav-link {
+    font-weight: 500;
+    color: var(--text-muted) !important;
+    border-radius: 8px;
+}
+
+.custom-navbar .nav-link:hover, 
+.custom-navbar .nav-link.active {
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Bento Cards Dark Theme */
+.bento-card {
+    background: var(--bg-card) !important;
+    border-radius: 20px;
+    border: 1px solid var(--border-card) !important;
+}
+
+.bento-card:hover {
+    transform: translateY(-3px);
+    background: var(--bg-card-hover) !important;
+    border-color: rgba(176, 28, 46, 0.4) !important;
+    box-shadow: 0 10px 30px rgba(176, 28, 46, 0.12);
+}
+
+.hero-maroon {
+    border-top: 4px solid var(--maroon-primary) !important;
+}
+
+/* Avatar Photo & Zoom Effect */
+.avatar-img {
+    width: 95px !important;
+    height: 95px !important;
+    min-width: 95px !important;
+    max-width: 95px !important;
+    object-fit: cover !important;
+    border: 3px solid var(--bg-card) !important;
+}
+
+.avatar-img:hover {
+    transform: scale(1.08);
+    border-color: var(--maroon-primary) !important;
+}
+
+/* Penyesuaian Teks */
+.text-dark { color: var(--text-main) !important; }
+.text-secondary, .text-muted { color: var(--text-muted) !important; }
+
+/* Fix Tabel Biar Ikut Gelap Transparan */
+.table-responsive,
+.custom-table,
+.custom-table th,
+.custom-table td,
+.custom-table tr {
+    background-color: transparent !important;
+    color: var(--text-main) !important;
+    --bs-table-bg: transparent !important;
+    --bs-table-color: var(--text-main) !important;
+}
+
+.custom-table tr {
+    border-bottom: 1px solid var(--border-card);
+}
+
+/* Link Institusi Pendidikan */
+.edu-link {
+    color: var(--text-main) !important;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.edu-link:hover {
+    color: var(--maroon-primary) !important;
+    text-decoration: underline;
+}
+
+/* Badges & Tags Maroon */
+.badge-maroon, .tag-maroon {
+    background: var(--maroon-soft) !important;
+    color: #f87171 !important;
+    font-weight: 600;
+    font-size: 0.75rem;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(176, 28, 46, 0.3);
+}
+
+.skill-chip {
+    background: #202023;
+    border: 1px solid var(--border-card);
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 12px;
+    color: var(--text-main);
+}
+
+.skill-chip:hover {
+    border-color: var(--maroon-primary);
+    color: #f87171;
+}
+
+/* Form Inputs Dark */
+.custom-input {
+    background: #202023;
+    border: 1px solid var(--border-card);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 0.875rem;
+    color: var(--text-main) !important;
+}
+
+.custom-input::placeholder {
+    color: #71717a;
+}
+
+.custom-input:focus {
+    background: #161618;
+    border-color: var(--maroon-primary);
+    box-shadow: 0 0 0 2px var(--maroon-soft);
+    color: #ffffff !important;
+}
+
+.btn-maroon {
+    background-color: var(--maroon-primary) !important;
+    color: #ffffff !important;
+}
+
+.btn-maroon:hover {
+    background-color: #8e1523 !important;
+}
+
+/* Certificate Gallery & Hover Zoom Effect */
+.cert-wrapper {
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid var(--border-card);
+    aspect-ratio: 16 / 10;
+}
+
+.cert-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.cert-wrapper:hover {
+    border-color: var(--maroon-primary);
+}
+
+.cert-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+/* Custom Modal Dark Popup */
+.dark-modal {
+    background-color: #161618 !important;
+    border: 1px solid var(--border-card) !important;
+}
